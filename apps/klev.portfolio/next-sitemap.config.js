@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.klev-dev.portfolio',
+  siteUrl: 'https://klevs-portfolio-main.onrender.com/',
   priority: 0.6,
   generateRobotsTxt: true,
   generateIndexSitemap: false,
