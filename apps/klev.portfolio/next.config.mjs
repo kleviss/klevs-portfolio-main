@@ -19,7 +19,7 @@ const nextConfig = {
   ],
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
-  output: 'export',
+  output: 'standalone',
   images: {
     unoptimized: true,
   },
