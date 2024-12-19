@@ -88,53 +88,64 @@ function ProjectsContents() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(projects[0]);
 
   return (
-    <>
-      {/* <SectionTitle
-        title="My Projects"
-        caption="Portfolio"
-        description="A collection of my recent projects and contributions."
-      /> */}
-      <SectionContent>
-        <div className={clsx('flex', 'lg:gap-12')}>
-          <div className={clsx('hidden flex-1 flex-col gap-3 pt-8', 'lg:flex')}>
-            <div className={clsx('flex flex-col gap-3')}>
-              {projects.map((project) => (
-                <ProjectCard
-                  key={project.title}
-                  project={project}
-                  isActive={selectedProject?.title === project.title}
-                  onClick={() => setSelectedProject(project)}
-                />
-              ))}
-            </div>
+    <SectionContent>
+      <div className={clsx('flex flex-col', 'lg:flex-row', 'lg:gap-12')}>
+        {/* Mobile Project Selector */}
+        <div className={clsx('-mt-8 mb-12', 'lg:hidden')}>
+          <select
+            className="w-full rounded-lg border border-gray-300 bg-white p-2"
+            value={selectedProject?.title}
+            onChange={(e) => setSelectedProject(projects.find(p => p.title === e.target.value) || null)}
+          >
+            {projects.map((project) => (
+              <option key={project.title} value={project.title}>
+                {project.title}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Desktop Project List */}
+        <div className={clsx('hidden flex-1 flex-col gap-3 pt-8', 'lg:flex')}>
+          <div className={clsx('flex flex-col gap-3')}>
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                project={project}
+                isActive={selectedProject?.title === project.title}
+                onClick={() => setSelectedProject(project)}
+              />
+            ))}
           </div>
-          <div className={clsx('w-full', 'lg:w-auto')}>
-            <div className={clsx('-mt-[41px]')}>
-              <div className={clsx('w-full', 'lg:h-[400px] lg:w-[600px]')}>
-                {selectedProject && (
-                  <AppWindow
-                    type="browser"
-                    browserTabs={[
-                      {
-                        icon: <GitHubIcon className="h-4 w-4" />,
-                        title: `${selectedProject.title} - GitHub`,
-                        isActive: true,
-                      }
-                    ]}
-                  >
-                    <GitHubWireframe
-                      author="kleviss"
-                      repository={selectedProject.title}
-                      description={selectedProject.description}
-                    />
-                  </AppWindow>
-                )}
-              </div>
+        </div>
+
+        {/* Project Preview */}
+        <div className={clsx('w-full', 'lg:w-auto')}>
+          <div className={clsx('-mt-[41px]')}>
+            <div className={clsx('w-full overflow-x-auto', 'lg:h-[400px] lg:w-[600px]')}>
+              {selectedProject && (
+                <AppWindow
+                  type="browser"
+                  browserTabs={[
+                    {
+                      icon: <GitHubIcon className="h-4 w-4" />,
+                      title: `${selectedProject.title} - GitHub`,
+                      isActive: true,
+                    }
+                  ]}
+                >
+                  <GitHubWireframe
+                    author="kleviss"
+                    repository={selectedProject.title}
+                    description={selectedProject.description}
+                  />
+                </AppWindow>
+              )}
             </div>
           </div>
         </div>
-      </SectionContent>
-    </>
+      </div>
+    </SectionContent>
   );
 }
 

@@ -1,7 +1,6 @@
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
-
-import type { ReactNode } from 'react';
 
 const animation = {
   hide: { x: -32, opacity: 0 },
@@ -16,6 +15,7 @@ interface PageHeaderProps {
   description: string;
   caption?: string;
   headerImage?: ReactNode;
+  removeBottomPaddingMobile?: boolean;
 }
 
 function PageHeader({
@@ -23,6 +23,7 @@ function PageHeader({
   description,
   caption = '',
   headerImage = null,
+  removeBottomPaddingMobile = false,
 }: PageHeaderProps) {
   return (
     <header
@@ -30,7 +31,8 @@ function PageHeader({
       className={clsx(
         'background-grid background-grid--fade-out border-divider-light z-[900] mb-10 border-b pt-32 pb-10',
         'md:mb-0 md:border-none md:pb-20 md:pt-40',
-        'dark:border-divider-dark'
+        'dark:border-divider-dark',
+        removeBottomPaddingMobile && 'pb-0'
       )}
     >
       {headerImage && (

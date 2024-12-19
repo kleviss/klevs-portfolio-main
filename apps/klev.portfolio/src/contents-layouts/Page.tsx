@@ -1,23 +1,23 @@
-import clsx from 'clsx';
+import type { PropsWithChildren, ReactNode } from 'react';
 
 import Head from '@/components/meta/Head';
-import SkipNavigation from '@/components/navigations/SkipNavigation';
 import PageHeader from '@/components/PageHeader';
-
-import { getPageOgImageUrl } from '@/helpers/page';
-
+import SkipNavigation from '@/components/navigations/SkipNavigation';
 import type { TPageFrontMatter } from '@/types';
-import type { PropsWithChildren, ReactNode } from 'react';
+import clsx from 'clsx';
+import { getPageOgImageUrl } from '@/helpers/page';
 
 interface PageProps {
   frontMatter: TPageFrontMatter;
   headerImage?: ReactNode;
+  removeBottomPaddingMobile?: boolean;
 }
 
 function Page({
   frontMatter: { title, description, caption },
   children = null,
   headerImage = null,
+  removeBottomPaddingMobile = false,
 }: PropsWithChildren<PageProps>) {
   const image = getPageOgImageUrl({
     caption,
@@ -34,6 +34,7 @@ function Page({
         description={description}
         caption={caption}
         headerImage={headerImage}
+        removeBottomPaddingMobile={removeBottomPaddingMobile}
       />
       <div className={clsx('scroll-mt-[86px]')} id="main-contents">
         {children}

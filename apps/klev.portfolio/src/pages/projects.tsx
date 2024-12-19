@@ -10,6 +10,7 @@ function Projects() {
         description: 'Showcase of my front-end related work. A collection of my recent projects and contributions.',
         caption: 'Portfolio',
       }}
+      removeBottomPaddingMobile
       headerImage={<HeaderImage />}
     >
       <ProjectsContents />

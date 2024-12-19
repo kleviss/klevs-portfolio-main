@@ -12,14 +12,17 @@ import dayjs from '@/utils/dayjs';
 
 function LastUpdate() {
   return (
-    <a
-      href="https://github.com/enjidev/enji.dev"
-      target="_blank"
-      rel="noreferrer nofollow"
-      className={clsx('hover:underline')}
-    >
-      <span>see the recent update of this template on GitHub</span>
-    </a>
+    <div className={clsx('flex items-center gap-1')}>
+      <a
+        href="https://github.com/enjidev/enji.dev"
+        target="_blank"
+        rel="noreferrer nofollow"
+        className={clsx('hover:underline')}
+      >
+        <span>see  this template on GitHub </span>
+      </a>
+      <ExternalLink className={clsx('h-3.5 w-3.5')} />
+    </div>
   );
 }
 
@@ -201,10 +204,12 @@ function Footer() {
                     {
                       title: 'Docs',
                       href: '/docs',
+                      label: 'soon',
                     },
                     {
                       title: 'Personal Blog',
                       href: '/blog',
+                      label: 'soon',
                     },
                     {
                       title: 'T.I.L',
@@ -225,12 +230,18 @@ function Footer() {
                     // },
                     {
                       title: 'Source Code',
-                      href: 'https://github.com/enjidev/portfolio',
+                      href: 'https://github.com/kleviss/klevs-portfolio-main',
                       isInternal: false,
                     },
+                    // {
+                    //   title: 'Credits',
+                    //   href: 'https://github.com/enjidev/enji.dev',
+                    //   isInternal: false,
+                    // },
                     {
                       title: 'Credits',
                       href: '/credits',
+                      label: 'soon',
                     },
                   ]}
                 />
