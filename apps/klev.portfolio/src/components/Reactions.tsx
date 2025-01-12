@@ -153,7 +153,7 @@ function Reactions({
       />
       <div className={clsx('flex items-center gap-4')}>
         <div className={clsx('flex flex-col items-center gap-2')}>
-          <EmojiReaction
+          {/* <EmojiReaction
             disabled={CLAPPING_QUOTA <= 0}
             title="Claps"
             defaultImage="/assets/emojis/clapping-hands.png"
@@ -162,7 +162,7 @@ function Reactions({
             onClick={() => {
               addReaction({ type: 'CLAPPING', section: currentSection });
             }}
-          />
+          /> */}
           <ReactionCounter count={CLAPPING} />
         </div>
         <div className={clsx('flex flex-col items-center gap-2')}>

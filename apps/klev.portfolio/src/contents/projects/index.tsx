@@ -70,14 +70,15 @@ const projects: Project[] = [
 ];
 
 interface ProjectCardProps {
+  key: string;
   project: Project;
   isActive: boolean;
   onClick: () => void;
 }
 
-function ProjectCard({ project, isActive, onClick }: ProjectCardProps) {
+function ProjectCard({ key, project, isActive, onClick }: ProjectCardProps) {
   return (
-    <div className="group relative">
+    <div className="group relative" key={key}>
       <div className="relative">
         <SectionButton
           title={project.title}

@@ -1,7 +1,10 @@
-import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
-import { useTranslation } from 'next-i18next';
+
+import type { ReactNode } from 'react';
+
+// import { useTranslation } from 'next-i18next';
+
 
 const animation = {
   hide: { x: -32, opacity: 0 },
@@ -28,7 +31,7 @@ function PageHeader({
   removeBottomPaddingMobile = false,
   translationNamespace = 'common',
 }: PageHeaderProps) {
-  const { t } = useTranslation(translationNamespace);
+  // const { t } = useTranslation(translationNamespace);
 
   return (
     <header
@@ -72,7 +75,7 @@ function PageHeader({
                 'dark:text-accent-400'
               )}
             >
-              {t(caption)}
+              {caption}
             </span>
           </m.div>
         )}
@@ -88,7 +91,7 @@ function PageHeader({
               'dark:text-slate-300'
             )}
           >
-            {t(title)}
+            {title}
           </h1>
         </m.div>
         <m.div
@@ -103,7 +106,7 @@ function PageHeader({
               'dark:text-slate-400'
             )}
           >
-            {t(description)}
+            {description}
           </p>
         </m.div>
       </div>

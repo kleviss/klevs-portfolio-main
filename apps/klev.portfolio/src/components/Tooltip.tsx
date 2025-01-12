@@ -1,5 +1,5 @@
-import { ReactNode } from 'react';
 import clsx from 'clsx';
+import { ReactNode } from 'react';
 
 interface TooltipProps {
   content: string;
@@ -7,7 +7,11 @@ interface TooltipProps {
   position?: 'top' | 'bottom' | 'left' | 'right';
 }
 
-export default function Tooltip({ content, children, position = 'bottom' }: TooltipProps) {
+function Tooltip({
+  content,
+  children,
+  position = 'bottom',
+}: TooltipProps) {
   const positionClasses = {
     top: 'bottom-full mb-2',
     bottom: 'top-full mt-2',
@@ -17,7 +21,7 @@ export default function Tooltip({ content, children, position = 'bottom' }: Tool
 
   return (
     <div className="group relative inline-block">
-      {children}
+      <div className="inline-flex">{children}</div>
       <div
         className={clsx(
           'pointer-events-none absolute left-1/2 -translate-x-1/2',
@@ -40,4 +44,6 @@ export default function Tooltip({ content, children, position = 'bottom' }: Tool
       </div>
     </div>
   );
-} 
+}
+
+export default Tooltip; 

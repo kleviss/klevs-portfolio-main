@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from '@/components/meta/Head';
 
 import Error404Contents from '@/contents/404';
 
@@ -7,11 +7,11 @@ import type { ReactElement } from 'react';
 function Error404() {
   return (
     <>
-      <Head>
-        <title>Page Not Found</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="robots" content="noindex" />
-      </Head>
+      <Head
+        title="Page Not Found"
+        description="404 - This page could not be found"
+        ogImage="/og/404.png"
+      />
       <Error404Contents />
     </>
   );

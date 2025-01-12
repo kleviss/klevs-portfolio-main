@@ -64,18 +64,20 @@ function NavLinkDropdown({ title, items }: NavLinkDropdownProps) {
                 )}
               >
                 {items.map((item) => (
-                  <Menu.Item key={item.href}>
-                    {({ active }) => (
-                      <LinkRef
-                        href={item.href}
-                        className={clsx('nav-link h-8 text-xs', [
-                          active && 'nav-link--focus',
-                        ])}
-                      >
-                        {item.title}
-                      </LinkRef>
-                    )}
-                  </Menu.Item>
+                  <div key={item.href}>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <LinkRef
+                          href={item.href}
+                          className={clsx('nav-link h-8 text-xs', [
+                            active && 'nav-link--focus',
+                          ])}
+                        >
+                          {item.title}
+                        </LinkRef>
+                      )}
+                    </Menu.Item>
+                  </div>
                 ))}
               </Menu.Items>
             )}

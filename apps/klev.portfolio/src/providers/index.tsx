@@ -9,7 +9,7 @@ import GlobalStateProvider from '@/providers/GlobalStateProvider';
 
 import type { PropsWithChildren } from 'react';
 
-function Provider({ children = null }: PropsWithChildren) {
+function Provider({ children }: PropsWithChildren) {
   return (
     <FramerMotionProvider>
       <ThemeProvider attribute="class" disableTransitionOnChange>

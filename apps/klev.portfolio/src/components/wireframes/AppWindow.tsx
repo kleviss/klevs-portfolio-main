@@ -16,9 +16,9 @@ function BrowserTab({ icon, title, isActive }: BrowserTabProps) {
       className={clsx('flex h-6 items-center truncate rounded-lg', [
         isActive
           ? [
-              'bg-slate-200 text-slate-600',
-              'dark:bg-slate-100/20 dark:text-slate-300',
-            ]
+            'bg-slate-200 text-slate-600',
+            'dark:bg-slate-100/20 dark:text-slate-300',
+          ]
           : ['bg-slate-200/50 text-slate-500', 'dark:bg-slate-100/5'],
       ])}
       style={{ width: 200 }}
@@ -89,13 +89,14 @@ function AppWindow({
             </div>
             {isWithBrowserTabs && (
               <div className={clsx('mt-2 flex gap-2 px-3')}>
-                {browserTabs.map(({ icon, title, isActive }) => (
-                  <BrowserTab
-                    key={title}
-                    icon={icon}
-                    title={title}
-                    isActive={isActive}
-                  />
+                {browserTabs.map((tab) => (
+                  <div key={tab.title}>
+                    <BrowserTab
+                      icon={tab.icon}
+                      title={tab.title}
+                      isActive={tab.isActive}
+                    />
+                  </div>
                 ))}
               </div>
             )}

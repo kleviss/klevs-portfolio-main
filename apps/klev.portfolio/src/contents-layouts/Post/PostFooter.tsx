@@ -45,13 +45,13 @@ function PostFooter({ tags, category }: PostFooterProps) {
           {category}
         </Link>
         with tags:
-        <div className={clsx('flex flex-wrap gap-1')}>
+        {/* <div className={clsx('flex flex-wrap gap-1')}>
           {tags.map((tag) => (
             <Chip href="/blog" key={tag}>
               #{tag}
             </Chip>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

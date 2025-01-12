@@ -3,9 +3,10 @@ import {
   LazyMotion,
   MotionConfig as MotionProvider,
 } from 'framer-motion';
+import { ReactNode } from 'react';
 
 interface FramerMotionProviderProps {
-  children: JSX.Element;
+  children: ReactNode;
 }
 
 function FramerMotionProvider({ children }: FramerMotionProviderProps) {

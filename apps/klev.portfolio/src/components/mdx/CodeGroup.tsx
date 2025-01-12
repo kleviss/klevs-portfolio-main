@@ -70,12 +70,12 @@ function CodeGroup({ variant = 'tab', children }: CodeGroupProps) {
           <Tab.List className={clsx('mdx-code-group__header')}>
             {tab.map(({ title, icon }, idx) =>
               variant === 'tab' ? (
-                <CodeGroupTab key={idx}>
+                <CodeGroupTab>
                   {icon}
                   {title}
                 </CodeGroupTab>
               ) : (
-                <CodeGroupFile key={idx}>
+                <CodeGroupFile>
                   {icon}
                   {title}
                 </CodeGroupFile>

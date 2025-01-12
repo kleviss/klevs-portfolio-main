@@ -24,16 +24,12 @@ function NavLinkExpanded({ title, items }: NavLinkExpandedProps) {
       </div>
       <ul className={clsx('flex items-center')}>
         {items.map((item, idx) => (
-          <React.Fragment key={item.href}>
-            <li>
-              <NavLink title={item.title} href={item.href} />
-            </li>
+          <>
+            <NavLink title={item.title} href={item.href} />
             {idx !== items.length - 1 && (
-              <li>
-                <div className="nav-link__separator">&middot;</div>
-              </li>
+              <div className="nav-link__separator">&middot;</div>
             )}
-          </React.Fragment>
+          </>
         ))}
       </ul>
     </div>

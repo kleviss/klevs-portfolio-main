@@ -62,14 +62,15 @@ function CleanIntuitive() {
             className={clsx('-mt-8 hidden flex-1 flex-col gap-3', 'lg:flex')}
           >
             {content.map((item, i) => (
-              <SectionButton
-                key={item.state}
-                title={item.title}
-                description={item.description}
-                icon={i + 1}
-                active={currentState?.state === item.state}
-                onClick={() => setCurrentState(item)}
-              />
+              <div key={item.state}>
+                <SectionButton
+                  title={item.title}
+                  description={item.description}
+                  icon={i + 1}
+                  active={currentState?.state === item.state}
+                  onClick={() => setCurrentState(item)}
+                />
+              </div>
             ))}
           </div>
           <div

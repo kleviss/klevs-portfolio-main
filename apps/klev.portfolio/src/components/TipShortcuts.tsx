@@ -9,23 +9,23 @@ const shortcuts: Array<{
   title: string;
   keys: Array<string>;
 }> = [
-  {
-    title: 'Open Quick Access',
-    keys: ['Q'],
-  },
-  {
-    title: 'Close Quick Access',
-    keys: ['Q', 'Esc'],
-  },
-  {
-    title: 'Toggle Dark Mode',
-    keys: ['D'],
-  },
-  {
-    title: 'Toggle Focus',
-    keys: ['F'],
-  },
-];
+    {
+      title: 'Open Quick Access',
+      keys: ['Q'],
+    },
+    {
+      title: 'Close Quick Access',
+      keys: ['Q', 'Esc'],
+    },
+    {
+      title: 'Toggle Dark Mode',
+      keys: ['D'],
+    },
+    {
+      title: 'Toggle Focus',
+      keys: ['F'],
+    },
+  ];
 
 const animation = {
   hide: { x: -24, opacity: 0 },
@@ -69,10 +69,10 @@ function TipShortcuts() {
             </div>
             <div className={clsx('flex items-center gap-2 text-[12px]')}>
               {keys.map((key, i) => (
-                <Fragment key={key}>
+                <div key={key}>
                   <Kbd>{key}</Kbd>
                   {i !== keys.length - 1 && <span>or</span>}
-                </Fragment>
+                </div>
               ))}
             </div>
           </m.div>

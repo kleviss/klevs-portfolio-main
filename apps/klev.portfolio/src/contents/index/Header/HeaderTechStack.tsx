@@ -1,3 +1,6 @@
+import clsx from 'clsx';
+import { m } from 'framer-motion';
+
 import {
   CursorIcon,
   FigmaIcon,
@@ -9,10 +12,7 @@ import {
   TypeScriptIcon,
   VSCodeIcon,
 } from '@/components/Icons';
-
 import Tooltip from '@/components/Tooltip';
-import clsx from 'clsx';
-import { m } from 'framer-motion';
 
 const animation = {
   hide: { x: -8, opacity: 0 },
@@ -44,10 +44,9 @@ function HeaderTechStack() {
       >
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#3178C6]')}>
-            <Tooltip content="Typescript">
+            <Tooltip content="TypeScript">
               <TypeScriptIcon className={clsx('h-6 w-6')} />
             </Tooltip>
-
           </div>
         </m.li>
         <m.li variants={animation}>

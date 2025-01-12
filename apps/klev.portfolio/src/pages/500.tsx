@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from '@/components/meta/Head';
 
 import Error500Contents from '@/contents/500';
 
@@ -7,11 +7,11 @@ import type { ReactElement } from 'react';
 function Error500() {
   return (
     <>
-      <Head>
-        <title>Server Error</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="robots" content="noindex" />
-      </Head>
+      <Head
+        title="Server Error"
+        description="500 - Server-side error occurred"
+        ogImage="/og/500.png"
+      />
       <Error500Contents />
     </>
   );
