@@ -4,5 +4,10 @@ const config = {
   //   locales: ['en'],
   //   defaultLocale: 'en',
   // },
-  // ... other config options ...
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
 };
+
+module.exports = config;

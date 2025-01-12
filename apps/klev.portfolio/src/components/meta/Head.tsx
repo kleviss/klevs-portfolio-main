@@ -4,47 +4,54 @@ import useCurrentUrl from '@/hooks/useCurrentUrl';
 
 interface HeadProps {
   title: string;
-  description?: string;
-  ogImage?: string;
+  description: string;
+  ogImage: string;
   overrideTitle?: boolean;
   structuredData?: string;
 }
 
 function Head({
   title,
-  description = 'Portfolio',
-  ogImage = '/og/projects.png',
+  description,
+  ogImage,
   overrideTitle = false,
   structuredData = '',
 }: HeadProps) {
   const currentUrl = useCurrentUrl();
-  const htmlTitle = overrideTitle ? title : `${title} — Klev · Front-End Developer`;
+
+  const htmlTitle = overrideTitle
+    ? title
+    : `${title} — Klev · Front-End Developer`;
 
   return (
-    <title key="title">{htmlTitle}</title>
-    // <NextHead>
-    //   <title key="title">{htmlTitle}</title>
-    //   <meta key="description" name="description" content={description} />
-    //   <link key="favicon" rel="icon" href="/favicon.ico" />
-    //   <link key="canonical" rel="canonical" href={currentUrl} />
+    <NextHead>
+      <title>{htmlTitle}</title>
+      <meta name="description" content={description} />
+      <link rel="icon" href="/favicon.ico" />
 
-    //   <meta key="og:image" property="og:image" content={ogImage} />
-    //   <meta key="og:image:width" property="og:image:width" content="1200" />
-    //   <meta key="og:image:height" property="og:image:height" content="630" />
-    //   <meta key="og:image:alt" property="og:image:alt" content={`Image with "${title}" text.`} />
+      {/* seo */}
+      <link rel="canonical" href={currentUrl} />
 
-    //   <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
-    //   <meta key="twitter:site" name="twitter:site" content="@klevisxhyra" />
-    //   <meta key="twitter:creator" name="twitter:creator" content="@klevisxhyra" />
-    //   <meta key="twitter:title" name="twitter:title" content={title} />
-    //   <meta key="twitter:description" name="twitter:description" content={description} />
-    //   <meta key="twitter:image" name="twitter:image" content={ogImage} />
-    //   <meta key="twitter:image:alt" name="twitter:image:alt" content={`Image with "${title}" text.`} />
+      {/* og image */}
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={`Image with "${title}" text.`} />
 
-    //   {structuredData && (
-    //     <script key="structured-data" type="application/ld+json">{structuredData}</script>
-    //   )}
-    // </NextHead>
+      {/* twitter card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@klevisxhyra" />
+      <meta name="twitter:creator" content="@klevisxhyra" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={`Image with "${title}" text.`} />
+
+      {/* structured data */}
+      {structuredData && (
+        <script type="application/ld+json">{structuredData}</script>
+      )}
+    </NextHead>
   );
 }
 
