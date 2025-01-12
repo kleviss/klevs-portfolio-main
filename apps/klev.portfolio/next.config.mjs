@@ -1,10 +1,12 @@
 import bundeAnalyzer from '@next/bundle-analyzer';
+import i18nConfig from './next-i18next.config.js';
 import nextMDX from '@next/mdx';
 import rehypePlugins from 'rehype-plugins';
 import remarkPlugins from 'remark-plugins';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  ...i18nConfig,
   redirects: async () => [
     {
       source: '/work',

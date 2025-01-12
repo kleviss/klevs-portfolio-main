@@ -1,11 +1,12 @@
-import AppWindow from '@/components/wireframes/AppWindow';
-import { GitHubIcon } from '@/components/Icons';
-import GitHubWireframe from '@/components/wireframes/GitHub';
-import { SectionButton } from '@/components/sections/SectionButton';
-import SectionContent from '@/components/sections/SectionContent';
 // import SectionTitle from '@/components/sections/SectionTitle';
 import clsx from 'clsx';
 import { useState } from 'react';
+
+import { GitHubIcon } from '@/components/Icons';
+import { SectionButton } from '@/components/sections/SectionButton';
+import SectionContent from '@/components/sections/SectionContent';
+import AppWindow from '@/components/wireframes/AppWindow';
+import GitHubWireframe from '@/components/wireframes/GitHub';
 
 interface Project {
   title: string;
@@ -17,11 +18,25 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'gjej-makine-al',
+    description: 'Gjej Makine Albania - Inovative App for finding cars in Albania',
+    githubUrl: 'https://github.com/kleviss/gjej-makine-al',
+    tech: ['React Native', 'Expo', 'TypeScript'],
+    lastUpdate: '1 day ago'
+  },
+  {
     title: 'next-swr-boilerplate',
     description: 'Simple Next.js Structure Boilerplate for fetching data with SWR hook.',
     githubUrl: 'https://github.com/kleviss/next-swr-boilerplate',
     tech: ['Next.js', 'SWR', 'TypeScript'],
     lastUpdate: 'Nov 1, 2022'
+  },
+  {
+    title: 'klebet-sports-betting',
+    description: 'Simple Betting App Dashboard with RapidAPI and Supabase',
+    githubUrl: 'https://github.com/kleviss/klebet-sports-betting',
+    tech: ['React', 'JavaScript', 'RapidAPI', 'Supabase'],
+    lastUpdate: '7 days ago'
   },
   {
     title: 'leben-de-RN-app',
@@ -44,13 +59,7 @@ const projects: Project[] = [
     tech: ['Node.js', 'Express'],
     lastUpdate: 'recently'
   },
-  {
-    title: 'gjej-makine-al',
-    description: 'Gjej Makine Albania - Inovative App for finding cars in Albania',
-    githubUrl: 'https://github.com/kleviss/gjej-makine-al',
-    tech: ['React Native', 'Expo', 'TypeScript'],
-    lastUpdate: '3 days ago'
-  },
+
   {
     title: 'traders-championship-components-library',
     description: 'Components for TradersChampionship Webflow website (https://traderschampionship.com)',

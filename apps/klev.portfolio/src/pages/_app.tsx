@@ -1,5 +1,6 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 
+// import { appWithTranslation } from 'next-i18next';
 import RootLayout from '@/components/layouts/Root';
 import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';
@@ -44,4 +45,5 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
   );
 }
 
+// export default appWithTranslation(App);
 export default App;

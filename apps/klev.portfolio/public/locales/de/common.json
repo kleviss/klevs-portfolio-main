@@ -1,0 +1,14 @@
+{
+  "header": {
+    "home": "Startseite",
+    "about": "Über",
+    "work": "Arbeit",
+    "blog": "Blog",
+    "contact": "Kontakt"
+  },
+  "common": {
+    "readMore": "Weiterlesen",
+    "viewAll": "Alle anzeigen",
+    "loading": "Wird geladen..."
+  }
+}
