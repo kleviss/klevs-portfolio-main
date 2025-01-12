@@ -6,7 +6,7 @@
     "lint": "turbo run lint",
     "clean": "turbo run clean",
     "format": "prettier --write .",
-    "start": "next start"
+    "export": "turbo run export"
   },
   "devDependencies": {
     "eslint": "^8.31.0",
