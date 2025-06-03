@@ -37,7 +37,7 @@ function ButtonResume() {
       target="_blank"
       rel="noreferrer nofollow"
       // href="https://www.figma.com/community/file/1176377524040948926"
-      href="https://drive.google.com/file/d/1orF1LZSnQ8tyT2nRWPLGpCcuO4p6fTte/view?usp=sharing"
+      href="https://drive.google.com/file/d/1kZDe6YXszvKjZtcFmtrj2lfS8IP2peFo/view?usp=sharing"
       className={clsx('button button--ghost px-2', 'md:button--big md:px-2')}
     >
       <DocumentIcon className={clsx('h-5 w-5')} />
