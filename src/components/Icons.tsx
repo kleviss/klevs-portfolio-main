@@ -1,4 +1,5 @@
 import type { ComponentProps } from 'react';
+import clsx from 'clsx';
 
 export function LightIcon(props: ComponentProps<'svg'>) {
   return (
@@ -680,7 +681,7 @@ export function CursorIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function LinkedInIcon(props: ComponentProps<'svg'>) {
+export function LinkedInIconDark(props: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -696,5 +697,29 @@ export function LinkedInIcon(props: ComponentProps<'svg'>) {
         d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"
       />
     </svg>
+  );
+}
+
+export function LinkedInIconLight(props: ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 50 50"
+      role="img"
+      fill="currentColor"
+      {...props}
+    >
+      <title>LinkedIn Icon</title>
+      <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" />
+    </svg>
+  );
+}
+
+export function LinkedInIcon(props: ComponentProps<'svg'>) {
+  return (
+    <>
+      {/* <LinkedInIconDark className={clsx('hidden dark:block')} {...props} /> */}
+      <LinkedInIconLight className={clsx('block dark:hidden')} {...props} />
+    </>
   );
 }

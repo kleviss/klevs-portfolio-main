@@ -3,10 +3,12 @@ import {
   FigmaIcon,
   GitHubIcon,
   LinkedInIcon,
+  LinkedInIconLight,
   TwitterIcon,
 } from '@/components/Icons';
 
 import Link from 'next/link';
+import NavIcon from './navigations/NavIcon';
 import clsx from 'clsx';
 import dayjs from '@/utils/dayjs';
 
@@ -144,16 +146,11 @@ function FooterDescription() {
           </a>
         </li>
         <li>
-          <a
+          <NavIcon
             href="https://www.linkedin.com/in/klevis-xhyra/"
-            target="_blank"
-            rel="noreferrer nofollow"
-            className={clsx('flex h-9 w-9 items-center justify-center')}
-            aria-label="My LinkedIn profile"
-            title="My LinkedIn profile"
-          >
-            <LinkedInIcon className={clsx('h-5 w-5')} />
-          </a>
+            icon={<LinkedInIcon className={clsx('h-5 w-5')} />}
+            title="LinkedIn"
+          />
         </li>
       </ul>
     </div>
