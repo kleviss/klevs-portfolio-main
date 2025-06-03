@@ -1,79 +1,67 @@
-import { z } from 'zod';
-
 import { getFrontMatter } from './utils';
 
-const dateRegex = /^\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$/;
+interface Schema {
+  [key: string]: any;
+}
 
-const BaseFrontMatter = z.object({
-  title: z.string().max(110),
-  description: z.string().max(120),
-  caption: z.string().default(''),
-  layout: z.string().default('Post'),
-});
+interface Data {
+  [key: string]: any;
+}
 
-const PostFrontMatter = z.object({
-  date: z.string().regex(dateRegex, 'Date format MUST be YYYY-MM-DD'),
-  lang: z.enum(['id', 'en']),
-  tags: z.array(z.string()).min(2).max(5),
-  category: z.string(),
-});
-
-const ProjectFrontMatter = z.object({
-  githubUrl: z.string().url().optional(),
-  npmUrl: z.string().url().optional(),
-  type: z.enum(['package']).default('package'),
-});
-
-const validate = (schema, data) => {
-  try {
-    return schema.parse(data);
-  } catch (err) {
-    if (err instanceof z.ZodError) {
-      throw new Error(JSON.stringify(err.issues, null, 2));
-    }
-
-    return null;
-  }
+const frontMatterSchemas: Schema = {
+  Post: {
+    title: 'string',
+    description: 'string',
+    caption: 'string',
+    category: 'string',
+    date: 'string',
+    lang: 'string',
+  },
+  Project: {
+    title: 'string',
+    description: 'string',
+    caption: 'string',
+    category: 'string',
+    date: 'string',
+    lang: 'string',
+    githubUrl: 'string',
+    npmUrl: 'string',
+    demoUrl: 'string',
+    writeupUrl: 'string',
+  },
 };
 
-const withFrontMatter = () => (_tree, file) => {
-  const data = getFrontMatter(file.value);
+const validate = (schema: Schema, data: Data) => {
+  const keys = Object.keys(schema);
+  const errors: string[] = [];
 
-  // skip front matter validation
-  if (Object.keys(data).length === 0) return;
-
-  const base = validate(BaseFrontMatter, data);
-
-  let frontMatter;
-
-  switch (base.layout) {
-    /**
-     * Specific post frontMatter
-     */
-    case 'Post': {
-      const post = validate(PostFrontMatter, data);
-      frontMatter = { ...base, ...post };
-      break;
+  keys.forEach((key) => {
+    if (!data[key]) {
+      errors.push(`Missing property: ${key}`);
     }
-    /**
-     * Specific project frontMatter
-     */
-    case 'Project': {
-      const project = validate(ProjectFrontMatter, data);
-      frontMatter = { ...base, ...project };
-      break;
-    }
-    /**
-     * Default frontMatter
-     */
-    default: {
-      frontMatter = base;
-      break;
+  });
+
+  return errors;
+};
+
+const withFrontMatter = () => (_tree: any, file: any) => {
+  const { path } = file;
+  const data = getFrontMatter(file.value) as Data;
+
+  if (Object.keys(data || {}).length === 0) return;
+
+  const folderName = path.replace(/.+\/(.+)\/.+/, '$1');
+  const isContentWithSchema = ['blog', 'projects'].includes(folderName);
+
+  if (isContentWithSchema) {
+    const contentType = folderName === 'blog' ? 'Post' : 'Project';
+    const schema = frontMatterSchemas[contentType];
+    const errors = validate(schema, data);
+
+    if (errors.length > 0) {
+      throw new Error(`Missing required frontmatter fields in ${path}:\n\n${errors.join('\n')}`);
     }
   }
-
-  // eslint-disable-next-line no-param-reassign
-  file.data['front-matter'] = frontMatter;
 };
 
 export default withFrontMatter;

@@ -50,9 +50,9 @@ function Code({
   const codeRef = useRef<HTMLPreElement>(null);
   const [isCopied, setCopied] = useState<boolean>(false);
 
-  const copyToClipboard = async () => {
+  const handleCopyToClipboard = async () => {
     try {
-      const content = codeRef.current.textContent || '';
+      const content = codeRef.current?.textContent || '';
       await navigator.clipboard.writeText(content);
 
       if (!isCopied) {
@@ -70,7 +70,7 @@ function Code({
         <button
           type="button"
           className={clsx('mdx-code__copy-button')}
-          onClick={copyToClipboard}
+          onClick={handleCopyToClipboard}
           title="Copy to Clipboard"
           aria-label="Copy to Clipboard"
         >

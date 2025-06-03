@@ -100,7 +100,7 @@ function EmojiReaction({
       className={clsx('relative cursor-pointer select-none', [
         disabled && 'cursor-not-allowed',
       ])}
-      whileTap={!disabled && 'tap'}
+      whileTap={!disabled ? 'tap' : undefined}
       whileHover="hover"
       onHoverStart={() => {
         if (!disabled) {

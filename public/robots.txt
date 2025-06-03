@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://klevs-portfolio-main.onrender.com/
+
+# Sitemaps
+Sitemap: https://klevs-portfolio-main.onrender.com/sitemap.xml

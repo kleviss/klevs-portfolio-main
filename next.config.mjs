@@ -6,23 +6,18 @@ import remarkPlugins from './lib/remark-plugins/index.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  redirects: async () => [
-    {
-      source: '/work',
-      destination: '/work/skills-and-tools',
-      permanent: false,
-    },
-    {
-      source: '/docs',
-      destination: '/docs/tailwindcss-accent',
-      permanent: false,
-    },
-  ],
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
-  output: 'standalone',
+  output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 

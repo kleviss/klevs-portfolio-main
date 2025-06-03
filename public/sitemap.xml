@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://klevs-portfolio-main.onrender.com/</loc><lastmod>2025-06-03T17:37:59.086Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/blog/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/blog/fitur-multiple-reactions-di-nextjs/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/blog/id-tailwindcss-best-practices/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/blog/tailwindcss-best-practices/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/blog/tentang-nextjs-tailwind-css-dan-framer-motion/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/blog/the-2022-retrospective/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/blog/the-2023-retrospective/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/credits/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/docs/tailwindcss-accent/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/projects/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/today-i-learned/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/work/contact/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/work/education/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/work/experience/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/work/skills-and-tools/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://klevs-portfolio-main.onrender.com/work/studio/</loc><lastmod>2025-06-03T17:37:59.087Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+</urlset>

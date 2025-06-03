@@ -3,7 +3,7 @@ import type { PropsWithChildren, ReactElement } from 'react';
 
 import clsx from 'clsx';
 import { m } from 'framer-motion';
-import useFocusMode from 'hooks/useFocusMode';
+import useFocusMode from '@/hooks/useFocusMode';
 import { useTheme } from 'next-themes';
 
 const animation = {

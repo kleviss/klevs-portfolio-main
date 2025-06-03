@@ -1,29 +1,30 @@
-import { animate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
 interface CountUpProps {
-  from: number;
-  to: number;
+  value: number;
 }
 
-function CountUp({ from, to }: CountUpProps) {
-  const nodeRef = useRef(null);
+function CountUp({ value }: CountUpProps) {
+  const nodeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const node = nodeRef.current;
+    if (!node) return;
 
-    const controls = animate(from, to, {
-      duration: 1.4,
+    const { animate } = require('framer-motion');
+
+    animate(0, value, {
+      duration: 2,
       ease: 'easeOut',
-      onUpdate(value) {
-        node.textContent = value.toFixed(0);
+      onUpdate(currentValue: number) {
+        if (node) {
+          node.textContent = currentValue.toFixed(0);
+        }
       },
     });
+  }, [value]);
 
-    return () => controls.stop();
-  }, [from, to]);
-
-  return <span ref={nodeRef}>{to}</span>;
+  return <span ref={nodeRef} />;
 }
 
 export default CountUp;

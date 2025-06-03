@@ -1,10 +1,12 @@
-import { TContentActivity, TContentActivityReaction } from 'types';
+import type { TContentActivity, TContentActivityReaction } from '@/types';
 
 import Link from 'next/link';
 import clsx from 'clsx';
 import { m } from 'framer-motion';
-import { relativeTime } from 'helpers/date';
-import useContentActivity from 'hooks/useContentActivity';
+import { relativeTime } from '@/helpers/date';
+import useContentActivity from '@/hooks/useContentActivity';
+import { EmojiReaction } from '@/components';
+import { formatDate } from '@/helpers/date';
 
 interface ActivityItemProps {
   data: TContentActivity;

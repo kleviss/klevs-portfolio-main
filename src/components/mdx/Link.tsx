@@ -9,6 +9,8 @@ import type { LinkProps } from 'next/link';
 type QuickViewProps = LinkProps & PropsWithChildren;
 
 export function QuickView({ href, children }: QuickViewProps) {
+  const hrefString = typeof href === 'string' ? href : href.toString();
+
   const handleQuickView = () => {
     const title = 'Quick Preview';
     const width = 480;
@@ -17,12 +19,17 @@ export function QuickView({ href, children }: QuickViewProps) {
     const top = 100;
 
     const newWindow = window.open(
-      href.toString(),
+      hrefString,
       title,
       `width=${width},height=${height},left=${left},top=${top}`
     );
 
-    newWindow.focus();
+    newWindow?.focus();
+  };
+
+  const openExternalLink = () => {
+    const newWindow = window.open(hrefString, '_blank', 'noopener,noreferrer');
+    newWindow?.focus();
   };
 
   return (
