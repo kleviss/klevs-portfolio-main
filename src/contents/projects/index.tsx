@@ -18,6 +18,13 @@ interface Project {
 
 const projects: Project[] = [
   {
+      title: 'SBC Hackathon 2025 (Winner 3rd. Place)',
+      description: 'SBC Hackathon 2025 - A hackathon project for the SBC Hackathon 2025. Project published under web.bonkilingua.com and won a price of 10.000 EURC',
+      githubUrl: 'https://github.com/kleviss/bonkilingua',
+      tech: ['Blockchain', 'Web3', 'GenAI', 'Supabase', 'Auth', 'TypeScript', 'React', 'Next.js', 'Tailwind CSS'],
+      lastUpdate: '1 month ago'
+  },
+  {
     title: 'leben-de-RN-app',
     description: 'React Native mobile application for Questions related to the Einbürgerungstest in Germany',
     githubUrl: 'https://github.com/kleviss/leben-de-RN-app',
