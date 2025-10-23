@@ -25,6 +25,7 @@
 - 🌙 **Dark/Light Mode** - Seamless theme switching with next-themes
 - 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
 - 🎯 **Interactive Elements** - Engaging user interface components
+- 🎯 **Graphics Projects Elements** - Engaging graphics for projects
 - 🔧 **Developer Experience** - TypeScript, ESLint, Prettier, and more
 
 ---
