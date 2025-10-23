@@ -1,8 +1,8 @@
-import { m, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from "framer-motion";
 
-import { DocumentIcon } from '@/components/Icons';
-import Link from 'next/link';
-import clsx from 'clsx';
+import { DocumentIcon } from "@/components/Icons";
+import Link from "next/link";
+import clsx from "clsx";
 
 const animation = {
   hide: {
@@ -22,10 +22,7 @@ interface HeaderCtaProps {
 
 function ButtonContactMe() {
   return (
-    <Link
-      href="/work/contact"
-      className={clsx('button button--solid min-w-[128px]', 'md:button--big')}
-    >
+    <Link href='/work/contact' className={clsx("button button--solid min-w-[128px]", "md:button--big")}>
       Get in Touch
     </Link>
   );
@@ -34,13 +31,13 @@ function ButtonContactMe() {
 function ButtonResume() {
   return (
     <a
-      target="_blank"
-      rel="noreferrer nofollow"
+      target='_blank'
+      rel='noreferrer nofollow'
       // href="https://www.figma.com/community/file/1176377524040948926"
-      href="https://drive.google.com/file/d/1kZDe6YXszvKjZtcFmtrj2lfS8IP2peFo/view?usp=sharing"
-      className={clsx('button button--ghost px-2', 'md:button--big md:px-2')}
+      href='https://drive.google.com/file/d/1MRXXS1JmcwWq7DPauaCiHSkKQYzoXTRR/view?usp=sharing'
+      className={clsx("button button--ghost px-2", "md:button--big md:px-2")}
     >
-      <DocumentIcon className={clsx('h-5 w-5')} />
+      <DocumentIcon className={clsx("h-5 w-5")} />
       RESUME
     </a>
   );
@@ -50,34 +47,26 @@ function AvailableForHire() {
   return (
     <div
       className={clsx(
-        'button button--ghost text-accent-500 pointer-events-none gap-2.5 px-2.5',
-        'md:button--big md:px-2.5',
-        'dark:text-accent-400'
+        "button button--ghost pointer-events-none gap-2.5 px-2.5 text-accent-500",
+        "md:button--big md:px-2.5",
+        "dark:text-accent-400"
       )}
     >
-      <span className={clsx('relative flex h-2 w-2')}>
+      <span className={clsx("relative flex h-2 w-2")}>
         <span
           className={clsx(
-            'bg-accent-600 absolute -top-1 -left-1 inline-flex h-4 w-4 animate-ping rounded-full opacity-75',
-            'dark:bg-accent-300'
+            "absolute -left-1 -top-1 inline-flex h-4 w-4 animate-ping rounded-full bg-accent-600 opacity-75",
+            "dark:bg-accent-300"
           )}
         />
-        <span
-          className={clsx(
-            'bg-accent-500 relative inline-flex h-2 w-2 rounded-full',
-            'dark:bg-accent-400'
-          )}
-        />
+        <span className={clsx("relative inline-flex h-2 w-2 rounded-full bg-accent-500", "dark:bg-accent-400")} />
       </span>
       AVAILABLE FOR HIRE
     </div>
   );
 }
 
-function HeaderCta({
-  isFree = true,
-  isFreeAnimationDuration = 4,
-}: HeaderCtaProps) {
+function HeaderCta({ isFree = true, isFreeAnimationDuration = 4 }: HeaderCtaProps) {
   const shouldReduceMotion = useReducedMotion();
 
   let isFreeVariants = {
@@ -105,30 +94,19 @@ function HeaderCta({
   }
 
   return (
-    <m.div className={clsx('flex gap-2')} initial="hide" animate="show">
-      <m.div
-        className={clsx('relative z-20')}
-        variants={animation}
-        transition={{ delay: 0.4 }}
-      >
+    <m.div className={clsx("flex gap-2")} initial='hide' animate='show'>
+      <m.div className={clsx("relative z-20")} variants={animation} transition={{ delay: 0.4 }}>
         <ButtonContactMe />
       </m.div>
       {isFree ? (
-        <m.div
-          variants={animation}
-          transition={{ delay: 2.8 }}
-          className={clsx('relative z-10')}
-        >
-          <m.div
-            variants={isFreeVariants}
-            transition={{ delay: isFreeAnimationDuration + 1.5, duration: 0.4 }}
-          >
+        <m.div variants={animation} transition={{ delay: 2.8 }} className={clsx("relative z-10")}>
+          <m.div variants={isFreeVariants} transition={{ delay: isFreeAnimationDuration + 1.5, duration: 0.4 }}>
             <AvailableForHire />
           </m.div>
           <m.div
-            className={clsx('absolute top-0 left-0')}
-            initial={{ x: -48, opacity: 0, pointerEvents: 'none' }}
-            animate={{ x: 0, opacity: 1, pointerEvents: 'auto' }}
+            className={clsx("absolute left-0 top-0")}
+            initial={{ x: -48, opacity: 0, pointerEvents: "none" }}
+            animate={{ x: 0, opacity: 1, pointerEvents: "auto" }}
             transition={{ delay: isFreeAnimationDuration + 1.6, duration: 0.4 }}
           >
             <ButtonResume />
